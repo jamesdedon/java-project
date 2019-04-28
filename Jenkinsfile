@@ -1,7 +1,6 @@
 pipeline {
     agent any
 
-    stages {
         stage('Unit_Tests') {
             steps {
                 git 'https://github.com/jamesdedon/java-project.git'
@@ -13,5 +12,4 @@ pipeline {
                 sh "ant -f build.xml -v"
             }
         }
-    }
-}
+ }
