@@ -5,7 +5,8 @@ pipeline {
       stages{
         stage('Unit_Tests') {
             steps {
-                git 'https://github.com/jamesdedon/java-project.git'
+		sh 'mkdir reports'
+		sh 'touch reports/result.xml'
 		sh 'ant -f test.xml -v >> reports/result.xml'
             }
         }
