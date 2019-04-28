@@ -15,5 +15,9 @@ pipeline {
                 sh 'ant -f build.xml -v'
             }
         }
+	stage('Deploy')
+	     steps {
+	        sh "aws s3 cp /dist/rectangle-7.jar s3://jamesdedon-1/rectangle-${BUILD_NUMBER}.jar"
+	     }
     } 
 }
